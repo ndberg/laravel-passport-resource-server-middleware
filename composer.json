@@ -1,0 +1,62 @@
+{
+    "name": "ndberg/laravel-passport-resource-server-middleware",
+    "description": "Middleware for separeted resource servers with laravel/passport verifying bearer Tokens and authenticate the user from the token. Used for clean resource server with separated laravel/passport auth server.",
+    "keywords": [
+        "laravel-passport-resource-server-middleware",
+        "laravel-resource-server",
+        "laravel-api",
+        "laravel-oauth2",
+        "laravel-passport-resource-server"
+    ],
+    "homepage": "https://github.com/ndberg/laravel-passport-resource-server-middleware",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Andreas Berger",
+            "email": "a@bergerweb.ch"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "ext-json": "*",
+        "illuminate/support": "^6.0",
+        "illuminate/database": "^6.0",
+        "illuminate/log": "^6.0",
+        "illuminate/cache": "^6.0",
+        "firebase/php-jwt": "^5.0",
+        "guzzlehttp/guzzle": "^6.5"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ndberg\\LaravelPassportResourceServerMiddleware\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ndberg\\LaravelPassportResourceServerMiddleware\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ndberg\\LaravelPassportResourceServerMiddleware\\LaravelPassportResourceServerMiddlewareServiceProvider"
+            ],
+            "aliases": {
+                "LaravelPassportResourceServerMiddleware": "Ndberg\\LaravelPassportResourceServerMiddleware\\LaravelPassportResourceServerMiddlewareFacade"
+            }
+        }
+    }
+}
